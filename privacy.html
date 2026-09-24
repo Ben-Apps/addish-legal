@@ -78,7 +78,7 @@
     <li>When you use a photo scan, the menu helper, a pantry photo or the craving helper, and when the app suggests adds for a plate, what you give it (photo or text) and some context (for example your wishes and food preferences) goes to our server and on to an AI service (Google Gemini, with Anthropic as backup). We don't store your photos or request texts.</li>
     <li>Our server keeps a few records linked to your guest ID: free-try counts, usage records and, if you send it, your feedback. They are pseudonymous, not anonymous.</li>
     <li>Subscriptions run through Apple or Google and RevenueCat. We never see your payment details.</li>
-    <li>“Delete all my data” in the app wipes your phone. To have the records on our server deleted, write to <a href="mailto:ben@creaiter.com">ben@creaiter.com</a> (details in section 9).</li>
+    <li>“Delete all my data” in the app deletes your guest user and its records on our server, then wipes your phone (details in section 9). Before anything goes to our server and the AI service for the first time, the app asks for your OK; you can turn “AI help” off in Settings at any time.</li>
   </ul>
 </div>
 
@@ -96,7 +96,7 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
   <li>the sign-in token for your guest ID (see 3.1), a small counter for free tries, cached app settings, and unsent feedback waiting for a connection.</li>
 </ul>
 <p>Reminders (the daily nudge, a leftover reminder you asked for, and one reminder before a free trial ends, if notifications are allowed) are scheduled on your phone. There is no push server.</p>
-<p><strong>Delete it:</strong> Settings → “Delete all my data” erases all of this from your device and removes the local link to your guest ID. It does not cancel your subscription, and it does not delete the records on our server described in section 3. For those, see section 9.</p>
+<p><strong>Delete it:</strong> Settings → “Delete all my data” erases all of this from your device and removes the local link to your guest ID. It first deletes your guest user and the records on our server described in section 3 (see section 9). It does not cancel your subscription.</p>
 
 <h2>3. What leaves your phone</h2>
 
@@ -196,8 +196,8 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 
 <h2>9. Your rights and how to have server data deleted</h2>
 <p>Under the GDPR you have the right to access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and to object to processing based on legitimate interests (Art. 21). Where you gave consent, you can withdraw it at any time with effect for the future. You also have the right to lodge a complaint with a supervisory authority (Art. 77 GDPR), in particular in the EU country where you live or work, or with the authority responsible for us: the Hamburg Commissioner for Data Protection and Freedom of Information (HmbBfDI), Ludwig-Erhard-Str. 22, 20459 Hamburg, Germany.</p>
-<p><strong>What the app can do today:</strong> Settings → “Delete all my data” deletes everything on your phone at once. It does not yet delete your guest user or the records on our server.</p>
-<p><strong>Deleting server data:</strong> write to <a href="mailto:ben@creaiter.com">ben@creaiter.com</a> with the subject “Delete my Addish data”. The app does not show your guest ID, and we store no name or e-mail with it, so we need something that lets us find your records:</p>
+<p><strong>Delete in the app:</strong> Settings → “Delete all my data”. The app first asks our server to delete your guest user, your free-try records, your feedback and your daily counters; your usage records are cut off from you irreversibly (the link to your guest ID is replaced by a random value, so only anonymous cost statistics remain). Only then is everything on your phone erased. If your phone is offline, the app tells you and lets you try again.</p>
+<p><strong>By e-mail:</strong> you can also write to <a href="mailto:ben@creaiter.com">ben@creaiter.com</a> with the subject “Delete my Addish data”, for example if you no longer have the app, or to have your customer record at RevenueCat removed. We store no name or e-mail with your guest ID, so we need something that lets us find your records:</p>
 <ul>
   <li>If you have or had a subscription, send the order or transaction ID from your Apple or Google purchase receipt. We use it to find your customer record at RevenueCat and, through it, your guest ID. We then delete the guest user, the free-try records, the usage records and feedback linked to it, and the customer record at RevenueCat.</li>
   <li>Without a subscription we usually cannot tell which records are yours (Art. 11 GDPR). They are deleted automatically after the periods in section 8.</li>
@@ -237,7 +237,7 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
     <li>Nutzt du einen Foto-Scan, den Speisekarten-Helfer, ein Vorrat-Foto oder die Gelüste-Hilfe, und wenn die App Extras für einen Teller vorschlägt, geht das, was du ihr gibst (Foto oder Text), mit etwas Kontext (z. B. deinen Wünschen und Essensvorlieben) an unseren Server und weiter an einen KI-Dienst (Google Gemini, ersatzweise Anthropic). Deine Fotos und Anfragetexte speichern wir nicht.</li>
     <li>Unser Server speichert einige Einträge, die mit deiner Gast-ID verknüpft sind: Gratisversuche, Nutzungsprotokolle und, falls du es schickst, dein Feedback. Sie sind pseudonym, nicht anonym.</li>
     <li>Abos laufen über Apple bzw. Google und RevenueCat. Deine Zahlungsdaten sehen wir nie.</li>
-    <li>„Alle meine Daten löschen" in der App leert dein Handy. Damit die Einträge auf unserem Server gelöscht werden, schreib an <a href="mailto:ben@creaiter.com">ben@creaiter.com</a> (Details in Abschnitt 9).</li>
+    <li>„Alle meine Daten löschen" in der App löscht deinen Gast-Nutzer und seine Einträge auf unserem Server und leert danach dein Handy (Details in Abschnitt 9). Bevor zum ersten Mal etwas an unseren Server und den KI-Dienst geht, fragt die App dich um Erlaubnis; „AI help" kannst du in den Einstellungen jederzeit ausschalten.</li>
   </ul>
 </div>
 
@@ -255,7 +255,7 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
   <li>das Anmelde-Token deiner Gast-ID (siehe 3.1), einen kleinen Zähler für Gratisversuche, zwischengespeicherte App-Einstellungen und noch nicht gesendetes Feedback.</li>
 </ul>
 <p>Erinnerungen (der tägliche Anstupser, eine Reste-Erinnerung, um die du gebeten hast, und eine Erinnerung vor Ende einer Testphase, wenn Mitteilungen erlaubt sind) werden auf deinem Handy geplant. Es gibt keinen Push-Server.</p>
-<p><strong>Löschen:</strong> Einstellungen → „Alle meine Daten löschen" entfernt all das von deinem Gerät und löst die lokale Verbindung zu deiner Gast-ID. Dein Abo wird dadurch nicht gekündigt, und die Einträge auf unserem Server aus Abschnitt 3 werden dadurch nicht gelöscht. Dazu Abschnitt 9.</p>
+<p><strong>Löschen:</strong> Einstellungen → „Alle meine Daten löschen" entfernt all das von deinem Gerät und löst die lokale Verbindung zu deiner Gast-ID. Vorher löscht es deinen Gast-Nutzer und die Einträge auf unserem Server aus Abschnitt 3 (siehe Abschnitt 9). Dein Abo wird dadurch nicht gekündigt.</p>
 
 <h2>3. Was dein Handy verlässt</h2>
 
@@ -355,8 +355,8 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 
 <h2>9. Deine Rechte und wie Serverdaten gelöscht werden</h2>
 <p>Du hast das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21). Eine Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen. Außerdem hast du das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO), insbesondere in dem EU-Land, in dem du lebst oder arbeitest, oder bei der für uns zuständigen Behörde: der Hamburgische Beauftragte für Datenschutz und Informationsfreiheit (HmbBfDI), Ludwig-Erhard-Str. 22, 20459 Hamburg.</p>
-<p><strong>Was die App heute kann:</strong> Einstellungen → „Alle meine Daten löschen" löscht alles auf deinem Handy auf einmal. Den Gast-Nutzer und die Einträge auf unserem Server löscht es noch nicht.</p>
-<p><strong>Serverdaten löschen:</strong> Schreib an <a href="mailto:ben@creaiter.com">ben@creaiter.com</a> mit dem Betreff „Meine Addish-Daten löschen". Die App zeigt deine Gast-ID nicht an, und wir speichern keinen Namen und keine E-Mail dazu. Wir brauchen deshalb etwas, womit wir deine Einträge finden:</p>
+<p><strong>In der App löschen:</strong> Einstellungen → „Alle meine Daten löschen". Die App bittet zuerst unseren Server, deinen Gast-Nutzer, deine Gratisversuche, dein Feedback und deine Tageszähler zu löschen; deine Nutzungsprotokolle werden unumkehrbar von dir getrennt (die Verbindung zur Gast-ID wird durch einen Zufallswert ersetzt, übrig bleibt nur eine anonyme Kostenstatistik). Erst danach wird alles auf deinem Handy gelöscht. Bist du offline, sagt dir die App das und du kannst es erneut versuchen.</p>
+<p><strong>Per E-Mail:</strong> Du kannst auch an <a href="mailto:ben@creaiter.com">ben@creaiter.com</a> schreiben, Betreff „Meine Addish-Daten löschen", zum Beispiel wenn du die App nicht mehr hast oder deinen Kundendatensatz bei RevenueCat entfernen lassen möchtest. Zu deiner Gast-ID speichern wir keinen Namen und keine E-Mail. Wir brauchen deshalb etwas, womit wir deine Einträge finden:</p>
 <ul>
   <li>Hast oder hattest du ein Abo, schick uns die Bestell- bzw. Transaktionsnummer aus deinem Kaufbeleg von Apple oder Google. Damit finden wir deinen Kundeneintrag bei RevenueCat und darüber deine Gast-ID. Dann löschen wir den Gast-Nutzer, die damit verknüpften Gratisversuche, Nutzungsprotokolle und Feedback-Einträge sowie den Kundeneintrag bei RevenueCat.</li>
   <li>Ohne Abo können wir in der Regel nicht erkennen, welche Einträge zu dir gehören (Art. 11 DSGVO). Sie werden nach den Fristen in Abschnitt 8 automatisch gelöscht.</li>
