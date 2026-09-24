@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- Account-/Datenlöschung (Google Play „Delete account URL", Apple 5.1.1(v)). Quelle: app/lib/data/account/account_deletion_repository.dart, backend/supabase/functions/assist/account.ts, Migration 20260924120000_account_deletion.sql. Keine externen Skripte/Fonts. Nicht anwaltlich geprüft. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Delete Your Addish Data</title>
+<meta name="description" content="How to delete your Addish guest account and the data tied to it, in the app or by e-mail, and what is deleted or kept.">
+<style>
+  :root {
+    --bg: #FFF8F0; --surface: #FFFFFF; --alt: #FFF0E1; --ink: #2A211D; --muted: #6E605A;
+    --line: #EADFD3; --primary: #BF4D2B; --primary-soft: #FFE1D5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #1C1715; --surface: #262020; --alt: #302826; --ink: #F6EEE6; --muted: #B9ACA3;
+      --line: #3B322F; --primary: #F28A66; --primary-soft: #4A2A1F;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 24px 16px 64px; }
+  header.top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+    padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+  .brand { font-family: Georgia, "Times New Roman", serif; font-weight: 700; font-size: 24px; color: var(--primary); text-decoration: none; }
+  nav.lang a { display: inline-block; padding: 6px 14px; margin-left: 4px; border-radius: 999px; border: 1px solid var(--line);
+    color: var(--ink); text-decoration: none; font-weight: 600; font-size: 15px; background: var(--surface); }
+  nav.lang a:hover, nav.lang a:focus { border-color: var(--primary); color: var(--primary); }
+  nav.pages { margin: 12px 0 0; font-size: 15px; }
+  nav.pages a { margin-right: 16px; font-weight: 600; }
+  nav.pages a[aria-current=page] { color: var(--ink); text-decoration: none; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 32px; line-height: 1.2; margin: 32px 0 4px; }
+  h2 { font-family: Georgia, "Times New Roman", serif; font-size: 22px; line-height: 1.3; margin: 36px 0 8px; }
+  h3 { font-size: 18px; margin: 24px 0 6px; }
+  p, li { overflow-wrap: anywhere; }
+  a { color: var(--primary); }
+  .meta { color: var(--muted); font-size: 15px; margin: 0; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px 20px; margin: 16px 0; }
+  .summary { background: var(--alt); border: none; }
+  .summary ul { margin: 8px 0 0; padding-left: 20px; }
+  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 12px 0; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; min-width: 560px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  th { background: var(--alt); font-weight: 700; }
+  tr:last-child td { border-bottom: none; }
+  .divider { margin: 64px 0 0; border: none; border-top: 2px solid var(--primary-soft); }
+  footer { margin-top: 48px; color: var(--muted); font-size: 15px; }
+  footer a { margin-right: 16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <a class="brand" href="index.html">Addish</a>
+</header>
+<nav class="pages" aria-label="Pages">
+  <a href="index.html">Start</a><a href="privacy.html">Privacy · Datenschutz</a><a href="terms.html">Terms · Nutzungsbedingungen</a><a href="support.html">Support</a><a href="delete-account.html" aria-current="page">Delete data</a>
+</nav>
+
+<article id="en" lang="en">
+<h1>Delete your Addish data</h1>
+<p class="meta">Addish: Add to Your Plate · by Benneth Müller · Last updated: 25 September 2026</p>
+
+<div class="card summary">
+<strong>In short</strong>
+<ul>
+  <li>Addish has no sign-up. When you first use an online feature, the app creates an anonymous guest account for you.</li>
+  <li>You can delete that guest account and everything tied to it yourself, inside the app, at any time.</li>
+  <li>Deleting your data does not cancel a subscription. You cancel that in the App Store or Google Play.</li>
+</ul>
+</div>
+
+<h2>Option 1: in the app (recommended)</h2>
+<ol>
+  <li>Open Addish.</li>
+  <li>Tap the gear icon to open Settings.</li>
+  <li>Tap “Delete all my data” and confirm.</li>
+</ol>
+<p>The app first asks our server to delete your guest account and the records tied to it. Only when the server confirms does it erase everything stored on your phone. If your phone is offline or our server can't be reached, nothing is deleted yet and the app lets you try again. This cannot be undone.</p>
+
+<h2>Option 2: by e-mail</h2>
+<p>If you no longer have the app, write to <a href="mailto:ben@creaiter.com?subject=Delete%20my%20Addish%20data">ben@creaiter.com</a> with the subject “Delete my Addish data”. Because there is no sign-up, we can only find your records if you had a subscription: please add the order or transaction ID from your Apple or Google receipt. We answer deletion requests within one month. Without a way to link a request to a guest account, the records are removed automatically after the retention periods below.</p>
+
+<h2>What is deleted</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Data</th><th>What happens</th></tr></thead>
+<tbody>
+<tr><td>Your anonymous guest account on our hosting provider (Supabase)</td><td>Deleted</td></tr>
+<tr><td>Free-try counters linked to your guest account</td><td>Deleted</td></tr>
+<tr><td>Feedback you sent from the app</td><td>Deleted</td></tr>
+<tr><td>Today's usage limit counters</td><td>Deleted</td></tr>
+<tr><td>Plates, check-ins, settings and preferences on your phone</td><td>Erased from your phone</td></tr>
+<tr><td>Your customer record at our subscription service (RevenueCat)</td><td>Removed on request by e-mail (see Option 2)</td></tr>
+</tbody>
+</table>
+</div>
+
+<h2>What is kept</h2>
+<ul>
+  <li><strong>Usage records for cost bookkeeping</strong> (which AI feature was used, when, and its technical cost) stay, but get a new random identifier. They can no longer be linked to you.</li>
+  <li><strong>Purchase records</strong> held by Apple or Google stay with them under their own rules. Your subscription itself also stays active until you cancel it there.</li>
+  <li><strong>Server logs</strong> of our hosting provider are kept for a short time (currently up to 7 days) and then deleted.</li>
+</ul>
+<p>Photos are not stored on our server: they are sent for analysis and not kept. Retention periods and all details: <a href="privacy.html#en">Privacy Policy</a>.</p>
+
+<h2>Cancel a subscription</h2>
+<p>On iPhone: Settings → your name → Subscriptions → Addish. On Android: Google Play → your profile icon → Payments &amp; subscriptions → Subscriptions → Addish. More help: <a href="support.html#en">Support</a>.</p>
+</article>
+
+<footer>
+  © 2026 Benneth Müller · <a href="index.html">Addish</a><a href="privacy.html">Privacy / Datenschutz</a><a href="terms.html">Terms / Nutzungsbedingungen</a><a href="support.html">Support</a>
+</footer>
+
+</div>
+</body>
+</html>
