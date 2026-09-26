@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Grundlage: docs/release/datenfluss.md (Nachtrag 24.09.2026) und Code-Stand 1.0.0. Nicht anwaltlich geprüft. Änderungen protokolliert in docs/release/eingaben_protokoll.md (2026-09-24). -->
+<!-- Grundlage: docs/release/datenfluss.md (Nachtrag 24.09.2026) und Code-Stand 1.0.0; 25.09.2026: Vorrat-Foto entfernt (in 1.0 per Flag aus, `kPantryPhotoEnabled`). Nicht anwaltlich geprüft. Änderungen protokolliert in docs/release/eingaben_protokoll.md (2026-09-24). -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -67,16 +67,16 @@
 <!-- ============================ ENGLISH ============================ -->
 <article id="en" lang="en">
 <h1>Privacy Policy</h1>
-<p class="meta">Addish app (iOS and Android) · Last updated: September 24, 2026</p>
+<p class="meta">Addish app (iOS and Android) · Last updated: September 25, 2026</p>
 
 <div class="card summary">
   <strong>The short version</strong>
   <ul>
     <li>No sign-up, no e-mail, no password. To use the online features, the app creates an anonymous guest ID for you with our hosting provider. It contains no name or contact details.</li>
     <li>No ads, no tracking across apps or websites, no analytics or crash-reporting tools. We don't sell your data.</li>
-    <li>Your profile, check-ins, saved plates, pantry and notes are stored only on your phone.</li>
-    <li>When you use a photo scan, the menu helper, a pantry photo or the craving helper, and when the app suggests adds for a plate, what you give it (photo or text) and some context (for example your wishes and food preferences) goes to our server and on to an AI service (Google Gemini, with Anthropic as backup). We don't store your photos or request texts.</li>
-    <li>Our server keeps a few records linked to your guest ID: free-try counts, usage records and, if you send it, your feedback. They are pseudonymous, not anonymous.</li>
+    <li>Your plates, saved plates and recipes, check-ins, album and food preferences are kept on our server (Supabase) under your guest ID once you allow AI help, so suggestions fit you better. Your private wish, pantry and notes stay only on your phone. You can delete everything at any time.</li>
+    <li>When you use a photo scan, the menu helper or the craving helper, and when the app suggests adds for a plate, what you give it (photo or text) and some context (for example your wishes and food preferences) goes to our server and on to an AI service (Google Gemini, with Anthropic as backup). We don't store your photos or request texts.</li>
+    <li>Our server also keeps a few records linked to your guest ID: free-try counts, usage records and, if you send it, your feedback. All of it is pseudonymous, not anonymous.</li>
     <li>Subscriptions run through Apple or Google and RevenueCat. We never see your payment details.</li>
     <li>“Delete all my data” in the app deletes your guest user and its records on our server, then wipes your phone (details in section 9). Before anything goes to our server and the AI service for the first time, the app asks for your OK; you can turn “AI help” off in Settings at any time.</li>
   </ul>
@@ -88,14 +88,15 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 <p>Contact for all privacy questions: <a href="mailto:ben@creaiter.com">ben@creaiter.com</a>. We have not appointed a data protection officer, as we are not legally required to.</p>
 
 <h2>2. What stays on your phone</h2>
-<p>Addish stores the following only on your device (in the app's local storage). We cannot see it:</p>
+<p>Addish keeps everything first in the app's local storage on your device. The following stays <strong>only</strong> there; we cannot see it:</p>
 <ul>
-  <li>your setup: wishes, food preferences (for example vegetarian, halal or gluten-free), tone, gentle mode, situations, reminder time, language;</li>
-  <li>your hunger check-ins and the patterns written from them, the words you pick for them, and your answers to the short question after a meal;</li>
-  <li>saved plates, your plate history, your pantry list, what you liked or passed on (“What I remember”), leftover notes and similar notes;</li>
+  <li>your private wish, tone, gentle mode, appearance, reminder time and language;</li>
+  <li>the patterns written from your check-ins and your answers to the short question after a meal;</li>
+  <li>your pantry list, what you passed on, the questions the app asked, leftover notes and similar notes;</li>
   <li>the sign-in token for your guest ID (see 3.1), a small counter for free tries, cached app settings, and unsent feedback waiting for a connection.</li>
 </ul>
 <p>Reminders (the daily nudge, a leftover reminder you asked for, and one reminder before a free trial ends, if notifications are allowed) are scheduled on your phone. There is no push server.</p>
+<p>Your plates, saved plates, check-ins, album and food preferences are also kept on your phone, and in addition on our server once you allow AI help (3.9).</p>
 <p><strong>Delete it:</strong> Settings → “Delete all my data” erases all of this from your device and removes the local link to your guest ID. It first deletes your guest user and the records on our server described in section 3 (see section 9). It does not cancel your subscription.</p>
 
 <h2>3. What leaves your phone</h2>
@@ -119,7 +120,7 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 <p>If you paste menu text (up to 4,000 characters) or take a photo of a menu, the text or photo is sent with the context from 3.2 to our server and on to the AI provider, to suggest easy adds. A menu photo is shrunk and stripped of metadata like a plate photo.</p>
 
 <h3>3.5 Pantry photo</h3>
-<p>If you fill your pantry from a photo (a receipt, your fridge, a shelf or a single food), the photo, the kind of photo and the context from 3.2 go to our server and the AI provider, which lists the foods it recognizes. Nothing is added to your pantry until you confirm it, and your pantry list stays on your phone.</p>
+<p>This version of the app does not offer filling your pantry from a photo, so no such photo is sent. Your pantry list stays on your phone.</p>
 
 <h3>3.6 Craving helper</h3>
 <p>If you type a craving the app doesn't know yet (up to 200 characters, plus optional tags such as “now” or “tired”), the text and the context from 3.2 go to our server and the AI provider.</p>
@@ -132,9 +133,10 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 <p>Purchases are made through the Apple App Store or Google Play. They process your payment as independent controllers under their own privacy policies; we never receive your payment details. RevenueCat (RevenueCat, Inc.) manages your subscription status. The RevenueCat software in the app and our server share with RevenueCat your guest ID as customer ID, your purchase and subscription information (product, dates, status, store receipt) and technical device information the RevenueCat software collects by default (such as device model, operating system version and app version). Our server asks RevenueCat whether your subscription is active and remembers the answer for 10 minutes in memory. If the ID is new to RevenueCat, RevenueCat creates a customer record for it.</p>
 
 <h3>3.9 What our server stores</h3>
-<p>Our database stores three kinds of records. They contain no name, e-mail address, photos or request texts, but they are <strong>linked to your guest ID</strong>: either the ID itself or a keyed hash of it (HMAC), which stays the same for the same guest ID. They are therefore pseudonymous, not anonymous.</p>
+<p>Our database stores four kinds of records. They contain no name, e-mail address or photos, but they are <strong>linked to your guest ID</strong>: either the ID itself or a keyed hash of it (HMAC), which stays the same for the same guest ID. They are therefore pseudonymous, not anonymous.</p>
 <ul>
-  <li><strong>Free tries:</strong> your guest ID, the feature (plate scan, menu helper, pantry photo) and the time of each free try, so free tries can't be used twice.</li>
+  <li><strong>Your plates and preferences (cloud storage):</strong> only after you allowed AI help (the same one-time question, which names this), the app saves in the background, under your guest ID: the plates you closed (foods, names you gave them, what you added, how they went, the rim), saved plates and recipes, your hunger check-ins, your album progress, and your preferences (goals, food preferences including allergy-related choices, foods you never want or often take, soft foods, life situations and the place you picked last — no location data). The app writes on your phone first; without a connection it simply waits. We use this to keep your data safe and to make suggestions fit you: when the app asks for plate ideas or meals, our server reads your preferences and your recent plates, for example so it never suggests a food you said no to and doesn't repeat an idea you had three times this week. Your private wish, pantry, notes and settings are not uploaded. The rows are readable only with your guest session and by our server. If you turn “AI help” off, nothing new is uploaded; “Delete all my data” removes what is stored.</li>
+  <li><strong>Free tries:</strong> your guest ID, the feature (plate scan, menu helper) and the time of each free try, so free tries can't be used twice.</li>
   <li><strong>Usage records:</strong> for each AI request, a request number, the feature, the time, the AI provider and model, the result (success or error), error codes, processing time, amount of data processed, cost, whether it was a free try or premium, and the hash of your guest ID. We also count requests per day under the same hash, for daily limits. We use this to run the service, fix errors, control costs and prevent abuse.</li>
   <li><strong>Feedback:</strong> only if you send it — your note (up to 1,000 characters), thumbs up or down, the screen it came from, the app version, the platform (iOS/Android), the app language, a random submission ID and, only if you tick the box, the foods on the plate you were looking at (never a photo). Before storing, our server removes e-mail addresses and phone numbers from your note and stores it with the hash of your guest ID. A few notes per hour and day are accepted. To understand what people ask for, we later have stored notes grouped and summarized by the AI providers from 3.7.</li>
 </ul>
@@ -160,7 +162,7 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 <h2>5. Recipients and processors</h2>
 <div class="table-wrap"><table>
   <tr><th>Recipient</th><th>What for</th><th>Data</th></tr>
-  <tr><td>Supabase, Inc. (USA; servers in AWS region us-east-1, USA)</td><td>processor: hosting, database, anonymous sign-in, server function</td><td>guest ID and session, everything in 3.2–3.9, IP address</td></tr>
+  <tr><td>Supabase, Inc. (USA; servers in AWS region us-east-1, USA)</td><td>processor: hosting, database, anonymous sign-in, server function</td><td>guest ID and session, everything in 3.2–3.9 (including your stored plates and preferences), IP address</td></tr>
   <tr><td>Google LLC — Gemini API (USA)</td><td>processor: first AI provider; feedback analysis</td><td>photos, texts and context (3.2–3.6); feedback notes (3.9)</td></tr>
   <tr><td>Anthropic PBC (USA)</td><td>processor: backup AI provider; feedback analysis</td><td>as Google, only when used</td></tr>
   <tr><td>RevenueCat, Inc. (USA)</td><td>processor: subscription management</td><td>guest ID, purchase and subscription data, device data</td></tr>
@@ -174,10 +176,11 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 
 <h2>7. Legal bases (EU/UK GDPR)</h2>
 <ul>
-  <li><strong>Providing the features you use</strong> (guest ID, photo scan, add-on suggestions, menu helper, pantry photo, craving helper, subscription, premium check, free tries): Art. 6(1)(b) GDPR.</li>
+  <li><strong>Providing the features you use</strong> (guest ID, photo scan, add-on suggestions, menu helper, craving helper, subscription, premium check, free tries): Art. 6(1)(b) GDPR.</li>
   <li><strong>Security, abuse prevention, daily limits, cost control, usage records, server logs, website hosting:</strong> our legitimate interest in running a secure, reliable and affordable service, Art. 6(1)(f) GDPR.</li>
   <li><strong>Feedback and its analysis:</strong> our legitimate interest in improving the app, Art. 6(1)(f) GDPR. Sending feedback is always optional.</li>
-  <li><strong>Food preferences that may reveal health or religious information</strong> (for example gluten-free, egg-free or halal): you choose whether to set them, and you can leave them empty or change them at any time. Where they count as special categories of data, we process them only because you chose to set them for this purpose, Art. 9(2)(a) GDPR. They are sent with requests but never stored on our server.</li>
+  <li><strong>Storing your plates, check-ins and preferences on our server and using them for suggestions (3.9):</strong> your consent, Art. 6(1)(a) GDPR, given with “Allow” on the AI question. You can withdraw it at any time in Settings → “AI help”; to remove what is already stored, use “Delete all my data”.</li>
+  <li><strong>Food preferences that may reveal health or religious information</strong> (for example gluten-free, egg-free or halal): you choose whether to set them, and you can leave them empty or change them at any time. Where they count as special categories of data, we process them only because you chose to set them for this purpose and allowed AI help, Art. 9(2)(a) GDPR. They are sent with requests and, once you allowed AI help, stored with your preferences (3.9).</li>
 </ul>
 
 <h2>8. How long we keep data</h2>
@@ -189,6 +192,7 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
   <tr><td>Free-try records</td><td>24 months after the last use of the guest ID, so free tries can't simply be reset</td></tr>
   <tr><td>Usage records and daily counts (pseudonymous)</td><td>13 months</td></tr>
   <tr><td>Feedback (pseudonymous)</td><td>24 months</td></tr>
+  <tr><td>Your stored plates, saved plates, check-ins, album and preferences (3.9)</td><td>until you delete them in the app (“Delete all my data”) or ask us by e-mail; together with the guest user at the latest 24 months after its last use</td></tr>
   <tr><td>Server logs of our hosting provider</td><td>deleted automatically according to Supabase's log retention for our plan (currently up to 7 days)</td></tr>
   <tr><td>Subscription data</td><td>at RevenueCat until we delete the customer record on request; at Apple and Google under their own rules; purchase records as required by law</td></tr>
   <tr><td>Data on your phone</td><td>until you delete it in the app or uninstall the app</td></tr>
@@ -196,10 +200,10 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 
 <h2>9. Your rights and how to have server data deleted</h2>
 <p>Under the GDPR you have the right to access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20) and to object to processing based on legitimate interests (Art. 21). Where you gave consent, you can withdraw it at any time with effect for the future. You also have the right to lodge a complaint with a supervisory authority (Art. 77 GDPR), in particular in the EU country where you live or work, or with the authority responsible for us: the Hamburg Commissioner for Data Protection and Freedom of Information (HmbBfDI), Ludwig-Erhard-Str. 22, 20459 Hamburg, Germany.</p>
-<p><strong>Delete in the app:</strong> Settings → “Delete all my data”. The app first asks our server to delete your guest user, your free-try records, your feedback and your daily counters; your usage records are cut off from you irreversibly (the link to your guest ID is replaced by a random value, so only anonymous cost statistics remain). Only then is everything on your phone erased. If your phone is offline, the app tells you and lets you try again.</p>
+<p><strong>Delete in the app:</strong> Settings → “Delete all my data”. The app first asks our server to delete your guest user, your stored plates, saved plates, check-ins, album and preferences, your free-try records, your feedback and your daily counters; your usage records are cut off from you irreversibly (the link to your guest ID is replaced by a random value, so only anonymous cost statistics remain). Only then is everything on your phone erased. If your phone is offline, the app tells you and lets you try again.</p>
 <p><strong>By e-mail:</strong> you can also write to <a href="mailto:ben@creaiter.com">ben@creaiter.com</a> with the subject “Delete my Addish data”, for example if you no longer have the app, or to have your customer record at RevenueCat removed. We store no name or e-mail with your guest ID, so we need something that lets us find your records:</p>
 <ul>
-  <li>If you have or had a subscription, send the order or transaction ID from your Apple or Google purchase receipt. We use it to find your customer record at RevenueCat and, through it, your guest ID. We then delete the guest user, the free-try records, the usage records and feedback linked to it, and the customer record at RevenueCat.</li>
+  <li>If you have or had a subscription, send the order or transaction ID from your Apple or Google purchase receipt. We use it to find your customer record at RevenueCat and, through it, your guest ID. We then delete the guest user, the stored plates and preferences, the free-try records, the usage records and feedback linked to it, and the customer record at RevenueCat.</li>
   <li>Without a subscription we usually cannot tell which records are yours (Art. 11 GDPR). They are deleted automatically after the periods in section 8.</li>
 </ul>
 <p>We handle requests within one month and confirm by e-mail. Deleting data does not cancel a subscription; you cancel it in the App Store or Google Play. Check-ins on your phone can be exported as CSV in the app.</p>
@@ -209,10 +213,10 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 <p>Addish is not directed at children under 16, and you must be at least 16 to use it (see the <a href="terms.html#en">Terms of Use</a>). We do not knowingly process data of children under 16. If you believe a child has sent us data, contact us and we will delete it.</p>
 
 <h2>11. Security</h2>
-<p>All connections to our server, RevenueCat and the AI providers are encrypted (HTTPS). Our database tables are closed to public access and readable only by our server. Photos are shrunk and stripped of metadata before upload.</p>
+<p>All connections to our server, RevenueCat and the AI providers are encrypted (HTTPS). Our database tables are closed to public access; your stored plates and preferences can be read only with your own guest session and by our server. Photos are shrunk and stripped of metadata before upload.</p>
 
 <h2>12. App Store and Google Play privacy details</h2>
-<p>In the App Store privacy section we declare photos, other user content (menu, craving and feedback text), the user ID, purchase history, product interaction, performance and diagnostic data, and other data (the request context) as collected for app functionality or analytics and <strong>linked to you</strong> through the pseudonymous guest ID. None of it is used to track you. Not collected: contact info, location, contacts, browsing or search history, financial info. On Google Play, the Data safety section lists the same data.</p>
+<p>In the App Store privacy section we declare photos, other user content (menu, craving and feedback text; your stored plates, saved plates and check-ins), the user ID, purchase history, product interaction (including your plate history), performance and diagnostic data, and other data (the request context and your stored preferences) as collected for app functionality, analytics or product personalization and <strong>linked to you</strong> through the pseudonymous guest ID. None of it is used to track you. Not collected: contact info, location, contacts, browsing or search history, financial info. On Google Play, the Data safety section lists the same data.</p>
 
 <h2>13. Changes</h2>
 <p>If the app starts handling data differently, we will update this policy and the date above before the change takes effect.</p>
@@ -226,16 +230,16 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 <!-- ============================ DEUTSCH ============================ -->
 <article id="de" lang="de">
 <h1>Datenschutzerklärung</h1>
-<p class="meta">App Addish (iOS und Android) · Stand: 24. September 2026</p>
+<p class="meta">App Addish (iOS und Android) · Stand: 25. September 2026</p>
 
 <div class="card summary">
   <strong>Kurz gesagt</strong>
   <ul>
     <li>Keine Registrierung, keine E-Mail, kein Passwort. Für die Online-Funktionen legt die App bei unserem Hosting-Anbieter eine anonyme Gast-ID für dich an. Sie enthält keinen Namen und keine Kontaktdaten.</li>
     <li>Keine Werbung, kein Tracking über Apps oder Websites hinweg, keine Analyse- oder Absturzberichts-Tools. Wir verkaufen deine Daten nicht.</li>
-    <li>Dein Profil, deine Check-ins, gespeicherten Teller, dein Vorrat und deine Notizen liegen nur auf deinem Handy.</li>
-    <li>Nutzt du einen Foto-Scan, den Speisekarten-Helfer, ein Vorrat-Foto oder die Gelüste-Hilfe, und wenn die App Extras für einen Teller vorschlägt, geht das, was du ihr gibst (Foto oder Text), mit etwas Kontext (z. B. deinen Wünschen und Essensvorlieben) an unseren Server und weiter an einen KI-Dienst (Google Gemini, ersatzweise Anthropic). Deine Fotos und Anfragetexte speichern wir nicht.</li>
-    <li>Unser Server speichert einige Einträge, die mit deiner Gast-ID verknüpft sind: Gratisversuche, Nutzungsprotokolle und, falls du es schickst, dein Feedback. Sie sind pseudonym, nicht anonym.</li>
+    <li>Deine Teller, gespeicherten Teller und Rezepte, Check-ins, dein Album und deine Essensvorlieben speichern wir unter deiner Gast-ID auf unserem Server (Supabase), sobald du die KI-Hilfe erlaubst, damit Vorschläge besser zu dir passen. Dein persönlicher Wunsch, dein Vorrat und deine Notizen bleiben nur auf deinem Handy. Du kannst alles jederzeit löschen.</li>
+    <li>Nutzt du einen Foto-Scan, den Speisekarten-Helfer oder die Gelüste-Hilfe, und wenn die App Extras für einen Teller vorschlägt, geht das, was du ihr gibst (Foto oder Text), mit etwas Kontext (z. B. deinen Wünschen und Essensvorlieben) an unseren Server und weiter an einen KI-Dienst (Google Gemini, ersatzweise Anthropic). Deine Fotos und Anfragetexte speichern wir nicht.</li>
+    <li>Unser Server speichert außerdem einige Einträge, die mit deiner Gast-ID verknüpft sind: Gratisversuche, Nutzungsprotokolle und, falls du es schickst, dein Feedback. All das ist pseudonym, nicht anonym.</li>
     <li>Abos laufen über Apple bzw. Google und RevenueCat. Deine Zahlungsdaten sehen wir nie.</li>
     <li>„Alle meine Daten löschen" in der App löscht deinen Gast-Nutzer und seine Einträge auf unserem Server und leert danach dein Handy (Details in Abschnitt 9). Bevor zum ersten Mal etwas an unseren Server und den KI-Dienst geht, fragt die App dich um Erlaubnis; „AI help" kannst du in den Einstellungen jederzeit ausschalten.</li>
   </ul>
@@ -247,14 +251,15 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 <p>Kontakt für alle Datenschutzfragen: <a href="mailto:ben@creaiter.com">ben@creaiter.com</a>. Eine Datenschutzbeauftragte bzw. einen Datenschutzbeauftragten haben wir nicht benannt, da wir dazu gesetzlich nicht verpflichtet sind.</p>
 
 <h2>2. Was auf deinem Handy bleibt</h2>
-<p>Folgendes speichert Addish nur auf deinem Gerät (im lokalen Speicher der App). Wir können es nicht sehen:</p>
+<p>Addish speichert alles zuerst im lokalen Speicher der App auf deinem Gerät. Folgendes bleibt <strong>nur</strong> dort; wir können es nicht sehen:</p>
 <ul>
-  <li>deine Einstellungen: Wünsche, Essensvorlieben (z. B. vegetarisch, halal oder glutenfrei), Ton, sanfter Modus, Situationen, Erinnerungszeit, Sprache;</li>
-  <li>deine Hunger-Check-ins und die daraus geschriebenen Muster, die Worte, die du dafür wählst, und deine Antworten auf die kurze Frage nach dem Essen;</li>
-  <li>gespeicherte Teller, deinen Teller-Verlauf, deine Vorratsliste, was du mochtest oder nicht („Was ich mir merke"), Reste-Notizen und ähnliche Notizen;</li>
+  <li>dein persönlicher Wunsch, Ton, sanfter Modus, Darstellung, Erinnerungszeit und Sprache;</li>
+  <li>die aus deinen Check-ins geschriebenen Muster und deine Antworten auf die kurze Frage nach dem Essen;</li>
+  <li>deine Vorratsliste, was du abgelehnt hast, die Fragen, die die App gestellt hat, Reste-Notizen und ähnliche Notizen;</li>
   <li>das Anmelde-Token deiner Gast-ID (siehe 3.1), einen kleinen Zähler für Gratisversuche, zwischengespeicherte App-Einstellungen und noch nicht gesendetes Feedback.</li>
 </ul>
 <p>Erinnerungen (der tägliche Anstupser, eine Reste-Erinnerung, um die du gebeten hast, und eine Erinnerung vor Ende einer Testphase, wenn Mitteilungen erlaubt sind) werden auf deinem Handy geplant. Es gibt keinen Push-Server.</p>
+<p>Deine Teller, gespeicherten Teller, Check-ins, dein Album und deine Essensvorlieben liegen ebenfalls auf deinem Handy und, sobald du die KI-Hilfe erlaubst, zusätzlich auf unserem Server (3.9).</p>
 <p><strong>Löschen:</strong> Einstellungen → „Alle meine Daten löschen" entfernt all das von deinem Gerät und löst die lokale Verbindung zu deiner Gast-ID. Vorher löscht es deinen Gast-Nutzer und die Einträge auf unserem Server aus Abschnitt 3 (siehe Abschnitt 9). Dein Abo wird dadurch nicht gekündigt.</p>
 
 <h2>3. Was dein Handy verlässt</h2>
@@ -278,7 +283,7 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 <p>Fügst du Speisekarten-Text ein (bis 4.000 Zeichen) oder fotografierst du eine Karte, gehen Text bzw. Foto mit dem Kontext aus 3.2 an unseren Server und weiter an den KI-Anbieter, um einfache Extras vorzuschlagen. Ein Speisekarten-Foto wird wie ein Tellerfoto verkleinert und von Metadaten befreit.</p>
 
 <h3>3.5 Vorrat-Foto</h3>
-<p>Füllst du deinen Vorrat per Foto (Kassenbon, Kühlschrank, Regal oder ein einzelnes Lebensmittel), gehen das Foto, die Art des Fotos und der Kontext aus 3.2 an unseren Server und den KI-Anbieter, der die erkannten Lebensmittel auflistet. In deinen Vorrat kommt erst etwas, wenn du es bestätigst; die Vorratsliste bleibt auf deinem Handy.</p>
+<p>Diese Version der App bietet kein Vorrat-Foto an; ein solches Foto wird also nicht gesendet. Die Vorratsliste bleibt auf deinem Handy.</p>
 
 <h3>3.6 Gelüste-Hilfe</h3>
 <p>Tippst du ein Gelüst ein, das die App noch nicht kennt (bis 200 Zeichen, plus optionale Tags wie „jetzt" oder „müde"), gehen Text und Kontext aus 3.2 an unseren Server und den KI-Anbieter.</p>
@@ -291,9 +296,10 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 <p>Käufe laufen über den Apple App Store oder Google Play. Diese verarbeiten deine Zahlung als eigenständige Verantwortliche nach ihren eigenen Datenschutzbestimmungen; deine Zahlungsdaten erhalten wir nie. RevenueCat (RevenueCat, Inc.) verwaltet deinen Abo-Status. Die RevenueCat-Software in der App und unser Server übermitteln an RevenueCat deine Gast-ID als Kundenkennung, deine Kauf- und Abo-Informationen (Produkt, Daten, Status, Kaufbeleg des Stores) sowie technische Geräteinformationen, die die RevenueCat-Software standardmäßig erhebt (z. B. Gerätemodell, Betriebssystem- und App-Version). Unser Server fragt RevenueCat, ob dein Abo aktiv ist, und merkt sich die Antwort 10 Minuten im Arbeitsspeicher. Ist die Kennung bei RevenueCat neu, legt RevenueCat dafür einen Kundeneintrag an.</p>
 
 <h3>3.9 Was unser Server speichert</h3>
-<p>Unsere Datenbank speichert drei Arten von Einträgen. Sie enthalten keinen Namen, keine E-Mail-Adresse, keine Fotos und keine Anfragetexte, sind aber <strong>mit deiner Gast-ID verknüpft</strong>: entweder mit der Kennung selbst oder mit einem Hash davon mit geheimem Schlüssel (HMAC), der für dieselbe Gast-ID immer gleich ist. Sie sind deshalb pseudonym, nicht anonym.</p>
+<p>Unsere Datenbank speichert vier Arten von Einträgen. Sie enthalten keinen Namen, keine E-Mail-Adresse und keine Fotos, sind aber <strong>mit deiner Gast-ID verknüpft</strong>: entweder mit der Kennung selbst oder mit einem Hash davon mit geheimem Schlüssel (HMAC), der für dieselbe Gast-ID immer gleich ist. Sie sind deshalb pseudonym, nicht anonym.</p>
 <ul>
-  <li><strong>Gratisversuche:</strong> deine Gast-ID, die Funktion (Teller-Scan, Speisekarten-Helfer, Vorrat-Foto) und der Zeitpunkt jedes Gratisversuchs, damit Gratisversuche nicht doppelt genutzt werden.</li>
+  <li><strong>Deine Teller und Vorlieben (Cloud-Speicherung):</strong> erst nachdem du die KI-Hilfe erlaubt hast (dieselbe einmalige Frage, die das nennt), speichert die App im Hintergrund unter deiner Gast-ID: die Teller, die du abgeschlossen hast (Lebensmittel, Namen, die du ihnen gegeben hast, was du ergänzt hast, wie es war, der Tellerrand), gespeicherte Teller und Rezepte, deine Hunger-Check-ins, deinen Album-Stand und deine Vorlieben (Ziele, Essensvorlieben einschließlich allergiebezogener Angaben, Lebensmittel, die du nie oder oft möchtest, weiche Kost, Lebenssituationen und den zuletzt gewählten Ort — keine Standortdaten). Die App schreibt zuerst auf deinem Handy; ohne Verbindung wartet sie einfach. Wir nutzen das, um deine Daten zu sichern und Vorschläge an dich anzupassen: Fragt die App nach Teller-Ideen oder Mahlzeiten, liest unser Server deine Vorlieben und deine letzten Teller, z. B. damit er nie etwas vorschlägt, das du abgelehnt hast, und keine Idee wiederholt, die du diese Woche schon dreimal hattest. Dein persönlicher Wunsch, dein Vorrat, deine Notizen und Einstellungen werden nicht hochgeladen. Die Einträge sind nur mit deiner Gast-Sitzung und für unseren Server lesbar. Schaltest du „AI help" aus, wird nichts Neues hochgeladen; „Alle meine Daten löschen" entfernt, was gespeichert ist.</li>
+  <li><strong>Gratisversuche:</strong> deine Gast-ID, die Funktion (Teller-Scan, Speisekarten-Helfer) und der Zeitpunkt jedes Gratisversuchs, damit Gratisversuche nicht doppelt genutzt werden.</li>
   <li><strong>Nutzungsprotokoll:</strong> zu jeder KI-Anfrage eine Anfragenummer, die Funktion, der Zeitpunkt, KI-Anbieter und Modell, das Ergebnis (Erfolg oder Fehler), Fehlercodes, Verarbeitungszeit, verarbeitete Datenmenge, Kosten, ob Gratisversuch oder Premium, und der Hash deiner Gast-ID. Unter demselben Hash zählen wir außerdem Anfragen pro Tag für Tageslimits. Wir nutzen das für den Betrieb, die Fehlersuche, die Kostenkontrolle und gegen Missbrauch.</li>
   <li><strong>Feedback:</strong> nur wenn du es schickst — deine Notiz (bis 1.000 Zeichen), Daumen hoch oder runter, der Bildschirm, von dem sie kommt, App-Version, Plattform (iOS/Android), App-Sprache, eine zufällige Einsendungs-ID und, nur wenn du das Kästchen ankreuzt, die Lebensmittel des Tellers, den du gerade angesehen hast (nie ein Foto). Vor dem Speichern entfernt unser Server E-Mail-Adressen und Telefonnummern aus deiner Notiz und speichert sie mit dem Hash deiner Gast-ID. Pro Stunde und Tag werden nur wenige Notizen angenommen. Um zu verstehen, was sich Menschen wünschen, lassen wir gespeicherte Notizen später von den KI-Anbietern aus 3.7 gruppieren und zusammenfassen.</li>
 </ul>
@@ -319,7 +325,7 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 <h2>5. Empfänger und Auftragsverarbeiter</h2>
 <div class="table-wrap"><table>
   <tr><th>Empfänger</th><th>Wofür</th><th>Daten</th></tr>
-  <tr><td>Supabase, Inc. (USA; Server in der AWS-Region us-east-1, USA)</td><td>Auftragsverarbeiter: Hosting, Datenbank, anonyme Anmeldung, Serverfunktion</td><td>Gast-ID und Sitzung, alles aus 3.2–3.9, IP-Adresse</td></tr>
+  <tr><td>Supabase, Inc. (USA; Server in der AWS-Region us-east-1, USA)</td><td>Auftragsverarbeiter: Hosting, Datenbank, anonyme Anmeldung, Serverfunktion</td><td>Gast-ID und Sitzung, alles aus 3.2–3.9 (einschließlich deiner gespeicherten Teller und Vorlieben), IP-Adresse</td></tr>
   <tr><td>Google LLC — Gemini API (USA)</td><td>Auftragsverarbeiter: erster KI-Anbieter; Feedback-Auswertung</td><td>Fotos, Texte und Kontext (3.2–3.6); Feedback-Notizen (3.9)</td></tr>
   <tr><td>Anthropic PBC (USA)</td><td>Auftragsverarbeiter: Ersatz-KI-Anbieter; Feedback-Auswertung</td><td>wie Google, nur wenn genutzt</td></tr>
   <tr><td>RevenueCat, Inc. (USA)</td><td>Auftragsverarbeiter: Abo-Verwaltung</td><td>Gast-ID, Kauf- und Abodaten, Gerätedaten</td></tr>
@@ -333,10 +339,11 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 
 <h2>7. Rechtsgrundlagen (DSGVO)</h2>
 <ul>
-  <li><strong>Bereitstellung der Funktionen, die du nutzt</strong> (Gast-ID, Foto-Scan, Extra-Vorschläge, Speisekarten-Helfer, Vorrat-Foto, Gelüste-Hilfe, Abo, Premium-Prüfung, Gratisversuche): Art. 6 Abs. 1 lit. b DSGVO.</li>
+  <li><strong>Bereitstellung der Funktionen, die du nutzt</strong> (Gast-ID, Foto-Scan, Extra-Vorschläge, Speisekarten-Helfer, Gelüste-Hilfe, Abo, Premium-Prüfung, Gratisversuche): Art. 6 Abs. 1 lit. b DSGVO.</li>
   <li><strong>Sicherheit, Missbrauchsschutz, Tageslimits, Kostenkontrolle, Nutzungsprotokoll, Server-Logs, Website-Hosting:</strong> unser berechtigtes Interesse an einem sicheren, zuverlässigen und bezahlbaren Dienst, Art. 6 Abs. 1 lit. f DSGVO.</li>
   <li><strong>Feedback und seine Auswertung:</strong> unser berechtigtes Interesse, die App zu verbessern, Art. 6 Abs. 1 lit. f DSGVO. Feedback zu schicken ist immer freiwillig.</li>
-  <li><strong>Essensvorlieben, die auf Gesundheit oder Religion hindeuten können</strong> (z. B. glutenfrei, ohne Ei oder halal): Du entscheidest, ob du sie setzt, und kannst sie leer lassen oder jederzeit ändern. Soweit sie besondere Kategorien von Daten sind, verarbeiten wir sie nur, weil du sie zu diesem Zweck gewählt hast, Art. 9 Abs. 2 lit. a DSGVO. Sie gehen mit Anfragen mit, werden auf unserem Server aber nie gespeichert.</li>
+  <li><strong>Speicherung deiner Teller, Check-ins und Vorlieben auf unserem Server und ihre Nutzung für Vorschläge (3.9):</strong> deine Einwilligung, Art. 6 Abs. 1 lit. a DSGVO, erteilt mit „Erlauben" bei der KI-Frage. Du kannst sie jederzeit in den Einstellungen unter „AI help" widerrufen; was schon gespeichert ist, entfernst du mit „Alle meine Daten löschen".</li>
+  <li><strong>Essensvorlieben, die auf Gesundheit oder Religion hindeuten können</strong> (z. B. glutenfrei, ohne Ei oder halal): Du entscheidest, ob du sie setzt, und kannst sie leer lassen oder jederzeit ändern. Soweit sie besondere Kategorien von Daten sind, verarbeiten wir sie nur, weil du sie zu diesem Zweck gewählt und die KI-Hilfe erlaubt hast, Art. 9 Abs. 2 lit. a DSGVO. Sie gehen mit Anfragen mit und werden, sobald du die KI-Hilfe erlaubt hast, mit deinen Vorlieben gespeichert (3.9).</li>
 </ul>
 
 <h2>8. Speicherdauer</h2>
@@ -348,6 +355,7 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
   <tr><td>Gratisversuche</td><td>24 Monate nach der letzten Nutzung der Gast-ID, damit Gratisversuche nicht einfach zurückgesetzt werden</td></tr>
   <tr><td>Nutzungsprotokoll und Tageszähler (pseudonym)</td><td>13 Monate</td></tr>
   <tr><td>Feedback (pseudonym)</td><td>24 Monate</td></tr>
+  <tr><td>Deine Teller, gespeicherten Teller und Rezepte, Check-ins, Album und Vorlieben (3.9)</td><td>bis du sie in der App löschst („Alle meine Daten löschen") oder uns per E-Mail darum bittest; zusammen mit dem Gast-Nutzer spätestens 24 Monate nach der letzten Nutzung</td></tr>
   <tr><td>Server-Logs unseres Hosting-Anbieters</td><td>automatische Löschung gemäß der Log-Aufbewahrung von Supabase für unseren Tarif (derzeit bis zu 7 Tage)</td></tr>
   <tr><td>Abo-Daten</td><td>bei RevenueCat, bis wir den Kundeneintrag auf Anfrage löschen; bei Apple und Google nach deren Regeln; Kaufbelege nach gesetzlichen Aufbewahrungspflichten</td></tr>
   <tr><td>Daten auf deinem Handy</td><td>bis du sie in der App löschst oder die App entfernst</td></tr>
@@ -355,10 +363,10 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 
 <h2>9. Deine Rechte und wie Serverdaten gelöscht werden</h2>
 <p>Du hast das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) und Widerspruch gegen Verarbeitungen auf Grundlage berechtigter Interessen (Art. 21). Eine Einwilligung kannst du jederzeit mit Wirkung für die Zukunft widerrufen. Außerdem hast du das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren (Art. 77 DSGVO), insbesondere in dem EU-Land, in dem du lebst oder arbeitest, oder bei der für uns zuständigen Behörde: der Hamburgische Beauftragte für Datenschutz und Informationsfreiheit (HmbBfDI), Ludwig-Erhard-Str. 22, 20459 Hamburg.</p>
-<p><strong>In der App löschen:</strong> Einstellungen → „Alle meine Daten löschen". Die App bittet zuerst unseren Server, deinen Gast-Nutzer, deine Gratisversuche, dein Feedback und deine Tageszähler zu löschen; deine Nutzungsprotokolle werden unumkehrbar von dir getrennt (die Verbindung zur Gast-ID wird durch einen Zufallswert ersetzt, übrig bleibt nur eine anonyme Kostenstatistik). Erst danach wird alles auf deinem Handy gelöscht. Bist du offline, sagt dir die App das und du kannst es erneut versuchen.</p>
+<p><strong>In der App löschen:</strong> Einstellungen → „Alle meine Daten löschen". Die App bittet zuerst unseren Server, deinen Gast-Nutzer, deine gespeicherten Teller, gespeicherten Teller, Check-ins, dein Album und deine Vorlieben, deine Gratisversuche, dein Feedback und deine Tageszähler zu löschen; deine Nutzungsprotokolle werden unumkehrbar von dir getrennt (die Verbindung zur Gast-ID wird durch einen Zufallswert ersetzt, übrig bleibt nur eine anonyme Kostenstatistik). Erst danach wird alles auf deinem Handy gelöscht. Bist du offline, sagt dir die App das und du kannst es erneut versuchen.</p>
 <p><strong>Per E-Mail:</strong> Du kannst auch an <a href="mailto:ben@creaiter.com">ben@creaiter.com</a> schreiben, Betreff „Meine Addish-Daten löschen", zum Beispiel wenn du die App nicht mehr hast oder deinen Kundendatensatz bei RevenueCat entfernen lassen möchtest. Zu deiner Gast-ID speichern wir keinen Namen und keine E-Mail. Wir brauchen deshalb etwas, womit wir deine Einträge finden:</p>
 <ul>
-  <li>Hast oder hattest du ein Abo, schick uns die Bestell- bzw. Transaktionsnummer aus deinem Kaufbeleg von Apple oder Google. Damit finden wir deinen Kundeneintrag bei RevenueCat und darüber deine Gast-ID. Dann löschen wir den Gast-Nutzer, die damit verknüpften Gratisversuche, Nutzungsprotokolle und Feedback-Einträge sowie den Kundeneintrag bei RevenueCat.</li>
+  <li>Hast oder hattest du ein Abo, schick uns die Bestell- bzw. Transaktionsnummer aus deinem Kaufbeleg von Apple oder Google. Damit finden wir deinen Kundeneintrag bei RevenueCat und darüber deine Gast-ID. Dann löschen wir den Gast-Nutzer, die damit verknüpften Teller und Vorlieben, Gratisversuche, Nutzungsprotokolle und Feedback-Einträge sowie den Kundeneintrag bei RevenueCat.</li>
   <li>Ohne Abo können wir in der Regel nicht erkennen, welche Einträge zu dir gehören (Art. 11 DSGVO). Sie werden nach den Fristen in Abschnitt 8 automatisch gelöscht.</li>
 </ul>
 <p>Wir bearbeiten Anfragen innerhalb eines Monats und bestätigen per E-Mail. Das Löschen von Daten kündigt kein Abo; kündigen kannst du im App Store bzw. bei Google Play. Check-ins auf deinem Handy kannst du in der App als CSV exportieren.</p>
@@ -367,10 +375,10 @@ Benneth Müller, Benneth Müller Digital Solutions &amp; Education<br>Borgfelder
 <p>Addish richtet sich nicht an Kinder unter 16 Jahren; für die Nutzung musst du mindestens 16 sein (siehe <a href="terms.html#de">Nutzungsbedingungen</a>). Wir verarbeiten nicht wissentlich Daten von Kindern unter 16 Jahren. Wenn du glaubst, dass uns ein Kind Daten geschickt hat, melde dich; wir löschen sie.</p>
 
 <h2>11. Sicherheit</h2>
-<p>Alle Verbindungen zu unserem Server, zu RevenueCat und zu den KI-Anbietern sind verschlüsselt (HTTPS). Unsere Datenbanktabellen sind nicht öffentlich zugänglich und nur für unseren Server lesbar. Fotos werden vor dem Hochladen verkleinert und von Metadaten befreit.</p>
+<p>Alle Verbindungen zu unserem Server, zu RevenueCat und zu den KI-Anbietern sind verschlüsselt (HTTPS). Unsere Datenbanktabellen sind nicht öffentlich zugänglich; deine gespeicherten Teller und Vorlieben sind nur mit deiner eigenen Gast-Sitzung und für unseren Server lesbar. Fotos werden vor dem Hochladen verkleinert und von Metadaten befreit.</p>
 
 <h2>12. Datenschutzangaben in App Store und Google Play</h2>
-<p>Im Datenschutz-Abschnitt des App Store geben wir Fotos, andere Nutzerinhalte (Speisekarten-, Gelüste- und Feedback-Text), die Nutzer-ID, den Kaufverlauf, Produktinteraktion, Leistungs- und Diagnosedaten sowie andere Daten (den Anfrage-Kontext) als erhoben für App-Funktionalität bzw. Analyse und über die pseudonyme Gast-ID <strong>mit dir verknüpft</strong> an. Nichts davon wird für Tracking genutzt. Nicht erhoben: Kontaktdaten, Standort, Kontakte, Browser- oder Suchverlauf, Finanzdaten. Bei Google Play nennt der Abschnitt „Datensicherheit" dieselben Daten.</p>
+<p>Im Datenschutz-Abschnitt des App Store geben wir Fotos, andere Nutzerinhalte (Speisekarten-, Gelüste- und Feedback-Text; deine gespeicherten Teller und Check-ins), die Nutzer-ID, den Kaufverlauf, Produktinteraktion (einschließlich deines Teller-Verlaufs), Leistungs- und Diagnosedaten sowie andere Daten (den Anfrage-Kontext und deine gespeicherten Vorlieben) als erhoben für App-Funktionalität, Analyse bzw. Produktpersonalisierung und über die pseudonyme Gast-ID <strong>mit dir verknüpft</strong> an. Nichts davon wird für Tracking genutzt. Nicht erhoben: Kontaktdaten, Standort, Kontakte, Browser- oder Suchverlauf, Finanzdaten. Bei Google Play nennt der Abschnitt „Datensicherheit" dieselben Daten.</p>
 
 <h2>13. Änderungen</h2>
 <p>Wenn die App Daten künftig anders verarbeitet, aktualisieren wir diese Erklärung und das Datum oben, bevor die Änderung gilt.</p>
